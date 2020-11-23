@@ -1,0 +1,144 @@
+%% ****************************************************************
+%% Document type and general settings
+%% ****************************************************************
+
+\documentclass[11pt,a4paper,oneside,bibtotocnumbered,pointlessnumbers,liststotoc]{scrbook}%
+
+%% ****************************************************************
+%% Packages
+%% ****************************************************************
+
+\usepackage[dvips]{graphicx}
+\DeclareGraphicsExtensions{.eps}
+\DeclareGraphicsRule{.eps.gz}{eps}{.eps.bb}{'zcat #1}
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\usepackage{blindtext}
+
+\usepackage{ee2}               
+\usepackage{amsmath}                           
+\usepackage[amssymb]{SIunits}  
+\usepackage[intoc]{nomencl}   
+\usepackage{multirow}             
+\usepackage{multicol}
+\usepackage{tabularx}         
+\usepackage{acronym}
+\usepackage[table]{xcolor}	% changing rowcolors
+\usepackage{longtable}	%tables over multible pages
+\usepackage[latin1]{inputenc}       
+\usepackage[T1]{fontenc}                             
+\usepackage{caption} 
+\usepackage[german, english]{babel}					
+\usepackage[]{epsfig}
+\usepackage{subfig}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage[headsepline]{scrpage2}
+\usepackage{verbatim}           
+\usepackage{hvfloat}	%rotating tables and pictures
+\usepackage{subfloat}
+\usepackage{enumitem}
+\usepackage{here}
+\usepackage[default,oldstyle,scale=0.95]{opensans} 
+
+
+\usepackage[pdftitle={Title}, pdfauthor={Autor}, bookmarks=true, pdfborder={0 0 0}]{hyperref}
+
+
+\usepackage[
+	style=ee2,
+	citestyle=authoryear,
+	firstinits=true,
+	backend=bibtex
+	]{biblatex}
+\addbibresource{literature.bib}
+
+%% ******************************************************************
+%% Page and font settings
+%% ******************************************************************
+
+
+\renewcommand{\baselinestretch}{1.5}%     % Zeilenabstand
+\geometry{a4paper, left=30mm, right=20mm, top= 20mm, bottom=20mm, headsep=5mm, footskip=5mm}%
+\setlength{\parindent}{0em}%           
+\setlength{\parskip}{0ex}%
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\setkomafont{title}{}
+\setkomafont{chapter}{\Large}
+\setkomafont{section}{\large}
+\setkomafont{subsection}{}
+\setkomafont{subsubsection}{} 
+\setkomafont{paragraph}{} 
+\setlist[description]{%
+  font={\bfseries}, % set the label font
+}
+
+
+\setkomafont{chapterentry}{\textbf}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{0mm}}
+
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ohead{\headmark}
+\ofoot[\pagemark]{\pagemark}
+
+\makenomenclature
+
+%% ********************************************************************************
+%% Main document
+%% ********************************************************************************
+
+\begin{document}
+
+%% Frontmatter
+\frontmatter
+%\include{Chapters/title_page1}  
+\include{Chapters/title_page2}	% for group work
+
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\include{Chapters/abstract}
+\tableofcontents
+%\listoffigures				% not needed for seminar papers
+%\listoftables				% not needed for seminar papers
+%\printnomenclature		% not needed for seminar papers
+
+%% Content
+\mainmatter
+\pagenumbering{arabic}
+
+
+\include{Chapters/chapter_1}
+\include{Chapters/chapter_2}
+\include{Chapters/chapter_3}
+\include{Chapters/chapter_4}
+\include{Chapters/chapter_5}
+
+\printbibliography[
+title={Bibliography}]
+
+
+
+
+
+%% Backmatter
+\backmatter
+%\include{Chapters/Danksagung}		% optional
+
+%\include{Chapters/Erklaerung1} 	
+
+\include{Chapters/Erklaerung2}	% for group work
+
+
+\end{document}
+

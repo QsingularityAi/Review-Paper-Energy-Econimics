@@ -1,0 +1,16 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{$\bar{v}_a$}]\begingroup Average velocity\nomeqref {2.2}
+		\nompageref{4}
+  \item [{$\Gamma$}]\begingroup Gamma function\nomeqref {2.2}
+		\nompageref{4}
+  \item [{$c$}]\begingroup Velocity of light\nomeqref {2.2}
+		\nompageref{4}
+  \item [{$E$}]\begingroup Kinetic energy\nomeqref {2.1}\nompageref{4}
+  \item [{$k$}]\begingroup Parameter\nomeqref {2.2}\nompageref{4}
+  \item [{$m$}]\begingroup Mass\nomeqref {2.1}\nompageref{4}
+  \item [{$p$}]\begingroup Momentum\nomeqref {2.1}\nompageref{4}
+
+\end{thenomenclature}

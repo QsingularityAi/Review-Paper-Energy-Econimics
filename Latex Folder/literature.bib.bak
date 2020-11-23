@@ -1,0 +1,54 @@
+% This file was created with JabRef 2.10.
+% Encoding: Cp1252
+
+
+@Book{APA2009,
+  Title                    = {Publication Manual of the American Psychological Association},
+  Author                   = {{American Psychological Association (ed.)}},
+  Year                     = {2009},
+
+  Address                  = {Washington D.C.},
+  Edition                  = {6},
+
+  Owner                    = {max},
+  Timestamp                = {2017.06.30}
+}
+
+@Book{Baensch2008,
+  Title                    = {Wissenschaftliches Arbeiten},
+  Author                   = {Bänsch, A.},
+  Year                     = {2008},
+
+  Address                  = {Munich/ Oldenburg},
+  Edition                  = {9},
+
+  Owner                    = {max},
+  Timestamp                = {2017.06.30}
+}
+
+@InProceedings{Deppe1997a,
+  Title                    = {{Wisu - Das Wirtschaftstudium}},
+  Author                   = {Jens Deppe},
+  Booktitle                = {Die Literaturrecherche: Kein Buch mit sieben Siegeln},
+  Year                     = {1997},
+  Number                   = {1},
+  Pages                    = {24-25},
+  Volume                   = {26},
+
+  Owner                    = {max},
+  Timestamp                = {2017.06.30}
+}
+
+@Article{mmm,
+  Title                    = {Vertical integration and long term contracts: The case of coal-burning electric generation plants},
+  Author                   = {Joskow, P. L.},
+  Journal                  = {Journal of Law, Economics, and Organization},
+  Year                     = {1985},
+  Number                   = {1},
+  Pages                    = {33-80},
+  Volume                   = {1},
+
+  Owner                    = {max},
+  Timestamp                = {2017.11.24}
+}
+

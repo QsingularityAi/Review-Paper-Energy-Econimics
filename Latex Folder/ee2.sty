@@ -1,0 +1,225 @@
+%
+%    latex-style-file 
+%
+%    DREWAG-Lehrstuhl für Energiewirtschaft
+%
+%    
+%
+
+
+%%
+%% Dokument-Voreinstellungen
+%%
+
+\newcommand{\docdefaults}{
+  \setlength{\topmargin}{-10mm}
+  \setlength{\headheight}{17mm}
+  \setlength{\headsep}{14mm}
+  \setlength{\topskip}{0mm}
+  \setlength{\textheight}{213mm}
+  \setlength{\footskip}{10mm}
+  \setlength{\oddsidemargin}{-6mm}
+  \setlength{\textwidth}{173mm}
+  \setlength{\parindent}{0em}
+  \setlength{\parskip}{2ex}
+  
+  \setlength{\headrulewidth}{0pt}
+  \setlength{\plainheadrulewidth}{0pt}
+  \setlength{\footrulewidth}{0pt}
+  \setlength{\plainfootrulewidth}{0pt}
+  \pagestyle{fancy}
+
+  \setlength{\floatsep}{1em}
+  \setlength{\textfloatsep}{1em}
+  \setlength{\intextsep}{1em}
+}
+
+
+%%
+%% Abbildungen
+%%
+
+\newcommand{\myfig}[5]{%
+  \begin{figure}[#1]
+    \begin{center}
+      \includegraphics*[width=#2]{#3}
+      \caption{\emph{#4}\label{#5}}
+    \end{center}
+  \end{figure}
+}
+
+\newcommand{\myfigb}[6]{%
+  \begin{figure}[#1]
+    \begin{center} 
+      \includegraphics*[width=#2]{#3}
+      \caption[\emph{#5}]{\emph{#4}\label{#6}}
+    \end{center}
+  \end{figure}
+}
+
+
+% Zwei Abbildungen in ein float
+\newcommand{\myfigtwo}[9]{%
+  \begin{figure}[#1]
+    \parbox[t]{#2}{
+      \includegraphics*[width=#2]{#3}
+      \caption{#4\label{#5}}}
+    \hfill
+    \parbox[t]{#6}{
+      \includegraphics*[width=#6]{#7}
+      \caption{#8\label{#9}}}
+  \end{figure}
+}
+
+%%
+%% Kapitelanfang
+%%
+
+\newcommand{\kapitel}[1]{\chapter{#1}}
+
+%%
+%% Listen-Deklarationen
+%%
+
+\newenvironment{listedef}[1]
+ {\begin{list}
+  {#1}
+   {\setlength{\topsep}{0ex}
+    \setlength{\parsep}{0ex}
+    \setlength{\itemsep}{0ex}
+ }}
+ {\end{list}}
+
+\newenvironment{liste}
+ {\begin{list}
+  {$\bullet$}
+   {\setlength{\topsep}{0ex}
+    \setlength{\parsep}{0ex}
+    \setlength{\itemsep}{0ex}
+ }}
+ {\end{list}}
+
+\newenvironment{liste2}
+ {\begin{list}
+   {$\circ$} 
+   {\setlength{\topsep}{0ex}
+    \setlength{\parsep}{0ex}
+    \setlength{\itemsep}{0ex}
+ }}
+ {\end{list}}
+
+\newenvironment{liste3}
+ {\begin{list}
+   {--} 
+   {\setlength{\topsep}{0ex}
+    \setlength{\parsep}{0ex}
+    \setlength{\itemsep}{0ex}
+ }}
+ {\end{list}}
+
+\newenvironment{aufzl}
+ {\begin{list}
+   {\stepcounter{enumi}(\theenumi)}
+   {\setlength{\topsep}{0ex}
+    \setlength{\parsep}{0ex}
+    \setlength{\itemsep}{0ex}
+    \setcounter{enumi}{0}
+ }}
+ {\end{list}}
+
+\newenvironment{aufzbib}
+ {\begin{list}
+   {\stepcounter{enumi}[\theenumi]}
+   {\setlength{\topsep}{0ex}
+    \setlength{\parsep}{0ex}
+    \setlength{\itemsep}{0ex}
+    \setcounter{enumi}{0}
+ }}
+ {\end{list}}
+
+%% Ende Listen-Deklarationen
+
+
+%%
+%% Bild- und Tabellenreferenzierung
+%%
+
+\newcommand{\bild}[1]{Bild \ref{#1}}
+
+\newcommand{\tabelle}[1]{Tabelle \ref{#1}}
+
+%%
+%% Formelsatz
+%%
+
+%% numerierte Formel
+
+\newcommand{\gln}[1]{\begin{equation}#1\end{equation}}
+\newcommand{\mzgln}[1]{\begin{eqnarray}#1\end{eqnarray}}
+
+%% chemische Formeln
+
+
+\newdimen\fdxvi
+\newdimen\fdxvii
+\newfont{\tensy}{serifmath at 10pt}
+\newcommand{\chem}[1]{%
+   \fdxvi=\fontdimen16\tensy\fdxvii=\fontdimen17\tensy%
+   {$\fontdimen16\tensy=2.7pt\fontdimen17\tensy=2.7pt\mathrm{#1}$}%
+   \fontdimen16\tensy=\fdxvi\fontdimen17\tensy=\fdxvii}
+ % Erzeugung chemischer Formeln mit korrekter Indizierung, vgl. Kopka S.164
+
+\newcommand{\chemit}[1]{%
+   \fdxvi=\fontdimen16\tensy\fdxvii=\fontdimen17\tensy%
+   {$\fontdimen16\tensy=2.7pt\fontdimen17\tensy=2.7pt\mathit{#1}$}%
+   \fontdimen16\tensy=\fdxvi\fontdimen17\tensy=\fdxvii}
+
+
+% Erzeugung chemischer Formeln mit korrekter Indizierung, vgl. Kopka S.164
+\newcommand{\csf}[1]{%
+   \fdxvi=\fontdimen16\tensy\fdxvii=\fontdimen17\tensy%
+   {$\fontdimen16\tensy=2.7pt\fontdimen17\tensy=2.7pt\mathsf{#1}$}%
+   \fontdimen16\tensy=\fdxvi\fontdimen17\tensy=\fdxvii}
+
+% das gleiche f"ur chem. Formeln in Gleichungsumgebung (ohne $)
+\newcommand{\chemg}[1]{%
+   \fdxvi=\fontdimen16\tensy\fdxvii=\fontdimen17\tensy
+   {\fontdimen16\tensy=2.7pt\fontdimen17\tensy=2.7pt\mathrm{#1}}
+   \fontdimen16\tensy=\fdxvi\fontdimen17\tensy=\fdxvii}
+
+% das gleiche in textsf
+\newcommand{\cgsf}[1]{%
+   \fdxvi=\fontdimen16\tensy\fdxvii=\fontdimen17\tensy
+   {\fontdimen16\tensy=2.7pt\fontdimen17\tensy=2.7pt\mathsf{#1}}
+   \fontdimen16\tensy=\fdxvi\fontdimen17\tensy=\fdxvii}
+
+\newcommand{\cgln}[1]{\gln{\chemg{#1}}}
+ 
+\newcommand{\cglsf}[1]{\gln{\cgsf{#1}}}
+ 
+\newcommand{\C}{$\,^\circ$C}  % Grad Celsius
+
+\newcommand{\mt}{\tilde{\mu}}  % mu mit Tilde
+
+\newcommand{\mr}[1]{\mathrm{#1}}  % Abkürzung für \mathrm
+
+\newcommand{\mum}{\,\textmu m}  % mikrometer
+
+% Formelzeichentabelle
+
+\newcommand{\sst}{\scriptstyle}
+\newcommand{\ssi}{\scriptsize}
+
+\newcommand{\eqtable}[2]{\sst #1:\quad& \text{\ssi #2}\nonumber}
+% am Ende der Zeile sollte noch \\[-3mm] eingefügt werden
+% außer bei der letzten Zeile ! 
+%%Ende Formelzeichentabelle
+
+\newcommand{\hmm}{
+  [ ??\smiley\female\lightning\male\phone\bell\frownie\ataribox$\leadsto$\twonotes??]
+}
+
+
+%%
+%% Ende ee2.sty
+%%
